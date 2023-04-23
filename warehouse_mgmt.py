@@ -61,6 +61,15 @@ class Order(ABC):
     @abstractmethod
     def calculate_total_weight(self):
         pass
+class OrderDetail:
+    def __init__(self, quantity: int):
+        self.quantity = quantity
+    @abstractmethod
+    def calculate_subtotal(self):
+        pass
+    @abstractmethod
+    def calculate_weight(self):
+        pass
 class Item:
     def __init__(self, price: float, weight: float, description: str):
         self.price = price
@@ -78,21 +87,33 @@ class Payment(ABC):
     @abstractmethod
     def authorized(self):
         pass
-class Order(ABC):
-    def __init__(self, date: date):
-        self.date = date
+
+class Cash(Payment):
+    def __init__(self, amount: float, cash_tendered: float):
+        super().__init__(amount)
+        self.cash_tendered = cash_tendered
     @abstractmethod
-    def cancel(self):
+    def tender_cash(self):
         pass
     @abstractmethod
-    def process(self):
+    def return_change(self):
         pass
+class BankTransfer(Payment):
+    def __init__(self, amount: float, recipient_name: str, IBAN: str, BIC: str):
+        super().__init__(amount)
+        self.recipient_name = recipient_name
+        self.IBAN = IBAN
+        self.BIC = BIC
     @abstractmethod
-    def dispatch(self):
+    def authorized(self):
         pass
-    @abstractmethod
-    def calculate_total(self):
-        pass
-    @abstractmethod
-    def calculate_total_weight(self):
-        pass
+class CreditCard(Payment):
+    def __init__(self, amount: float, number: str, cardholder_name: str, expiration_date: date, type: str):
+        super().init(amount)
+        self.number = number
+        self.cardholder_name = cardholder_name
+        self.expiration_date = expiration_date
+        self.type = type
+def authorized(self):
+    # Implement authorization logic here
+    return True
