@@ -1,0 +1,13 @@
+
+# for commiting the changes
+--------------------------------------------------------------------
+git add .                            #staging the changes
+git commit -m "Message for commit"   #
+git push origin [branch name]
+--------------------------------------------------------------------
+
+git pull origin [branch name]        #Pulling the changes 
+git fetch                            # Retrieves branches
+
+git branch [name of branch]
+git checkout [name of branch]        #Changing the branch
