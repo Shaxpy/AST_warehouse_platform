@@ -43,3 +43,22 @@ class Customer(ABC):
     @abstractmethod
     def get_orders(self):
         pass
+
+
+class Item:
+    def __init__(self, price: float, weight: float, description: str):
+        self.price = price
+        self.weight = weight
+        self.description = description
+    @abstractmethod
+    def get_price_for_quantity(self, quantity: int):
+        pass
+    @abstractmethod
+    def in_stock(self):
+        pass
+class Payment(ABC):
+    def __init__(self, amount: float):
+        self.amount = amount
+    @abstractmethod
+    def authorized(self):
+        pass
