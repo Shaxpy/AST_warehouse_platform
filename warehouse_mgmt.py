@@ -43,6 +43,7 @@ class Customer(ABC):
     @abstractmethod
     def get_orders(self):
         pass
+<<<<<<< HEAD
 
 
 class Item:
@@ -61,4 +62,23 @@ class Payment(ABC):
         self.amount = amount
     @abstractmethod
     def authorized(self):
+=======
+    class Order(ABC):
+    def __init__(self, date: date):
+        self.date = date
+    @abstractmethod
+    def cancel(self):
+        pass
+    @abstractmethod
+    def process(self):
+        pass
+    @abstractmethod
+    def dispatch(self):
+        pass
+    @abstractmethod
+    def calculate_total(self):
+        pass
+    @abstractmethod
+    def calculate_total_weight(self):
+>>>>>>> Talha
         pass
