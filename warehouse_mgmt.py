@@ -45,7 +45,6 @@ class Customer(ABC):
         pass
 
 
-
 class Item:
     def __init__(self, price: float, weight: float, description: str):
         self.price = price
