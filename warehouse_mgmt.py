@@ -43,3 +43,30 @@ class Customer(ABC):
     @abstractmethod
     def get_orders(self):
         pass
+    class Order(ABC):
+    def __init__(self, date: date):
+        self.date = date
+    @abstractmethod
+    def cancel(self):
+        pass
+    @abstractmethod
+    def process(self):
+        pass
+    @abstractmethod
+    def dispatch(self):
+        pass
+    @abstractmethod
+    def calculate_total(self):
+        pass
+    @abstractmethod
+    def calculate_total_weight(self):
+        pass
+class OrderDetail:
+    def __init__(self, quantity: int):
+        self.quantity = quantity
+    @abstractmethod
+    def calculate_subtotal(self):
+        pass
+    @abstractmethod
+    def calculate_weight(self):
+        pass
