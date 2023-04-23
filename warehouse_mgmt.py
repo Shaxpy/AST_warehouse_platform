@@ -61,12 +61,3 @@ class Customer(ABC):
     @abstractmethod
     def calculate_total_weight(self):
         pass
-class OrderDetail:
-    def __init__(self, quantity: int):
-        self.quantity = quantity
-    @abstractmethod
-    def calculate_subtotal(self):
-        pass
-    @abstractmethod
-    def calculate_weight(self):
-        pass
