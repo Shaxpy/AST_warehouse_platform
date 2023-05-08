@@ -3,7 +3,7 @@
 * \<Shashwat> \<Pandey>
 * \<Swithinraj> \<Moses Daniel>
 * \<Mohammed> \<Zaid Nidgundi>
-*\<Talha> \<Riyaz Sheikh>
+*\<Talha> \<Riyaz Shaikh>
 ## Repository Analysis
 #### Who modified/developed which part of the system?
 | Change message | Author | Date & Hour | Lines changed |
